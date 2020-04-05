@@ -10,42 +10,9 @@ typedef struct node{
 	elementype top;
 }myStack;				
 
-void visit(elementype c)
-{
-	printf("%d ", c);
-}
-
 bool initstack(myStack *s)
 {
 	s -> top = -1;	
-	return true;
-}
-
-bool stackempty(myStack s)
-{
-	if(s.top == -1)
-		return true;
-	else 
-		return false;
-} 
-
-bool ClearStack(myStack *s)
-{ 
-        s -> top = -1;
-        return true;
-}
-
-elementype length(myStack s)
-{
-	return s.top + 1;
-}
-
-bool getTop(myStack s, elementype *e)
-{
-	if(s.top == -1)
-		return false;
-	else
-		*e = s.data[s.top];
 	return true;
 }
 
@@ -59,14 +26,6 @@ bool push(myStack *s, elementype e)
 		s -> data[s -> top] = e;
 		return true;
 	 } 
-}
-
-void traverse(myStack s)
-{
-	int i = 0;
-	while(i <= s.top)			 
-		visit(s.data[i++]);
-	printf("\n");
 } 
 
 bool pop(myStack *s, elementype *e)
@@ -89,6 +48,10 @@ int main()
     {
         scanf("%d %d",&N,&Q);
         myStack S[N+1];
+        for (j=0;j<=N;j++)
+        {
+        	initstack(&S[j]);
+		}
         for (j=0;j<Q;j++)
         {
             scanf("%d",&Choice);
@@ -100,7 +63,7 @@ int main()
             else if (Choice==2)
             {
                 scanf ("%d",&Input1);
-                if (stackempty(S[Input1]))
+                if (S[Input1].top == -1)
                 {
                     printf("EMPTY\n");
                 }
@@ -110,7 +73,7 @@ int main()
                     printf("%d\n",Temp);
                 }
             }
-            else if (Choice==2)
+            else if (Choice==3)
             {
                 scanf ("%d %d",&Input1,&Input2);
                 while (S[Input2].top > -1)
