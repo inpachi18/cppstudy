@@ -2,7 +2,7 @@
 
 int main()
 {
-    int T,N,Q,i,j,k,Choice,Input1,Input2;
+    long long T,N,Q,i,j,k,Choice,Input1,Input2;
     scanf("%d",&T);
     for (i=0;i<T;i++)
     {
