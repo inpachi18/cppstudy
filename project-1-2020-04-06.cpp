@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 struct Stack{
-	int Data[300];
+	int Data[10000];
 	int Top;
 }; 
 
