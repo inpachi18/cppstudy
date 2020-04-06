@@ -12,30 +12,30 @@ typedef struct node{
 
 bool initstack(myStack *s)
 {
-	s -> top = -1;	
+	s->top=-1;	
 	return true;
 }
 
 bool push(myStack *s, elementype e)
 {
-	if(s -> top == maxsize - 1)
+	if(s->top==maxsize-1)
 		return false;
 	else
 	{
-		s -> top++;
-		s -> data[s -> top] = e;
+		s->top++;
+		s->data[s->top]=e;
 		return true;
 	 } 
 } 
 
 bool pop(myStack *s, elementype *e)
 {
-	if(s -> top == -1)
+	if(s->top==-1)
 		return false;
 	else
 	{
-		*e = s -> data[s -> top];
-		s -> top--;	
+		*e=s->data[s->top];
+		s->top--;	
 		return true;
 	}
 }
@@ -60,7 +60,7 @@ int main()
                 scanf ("%d %d",&Input1,&Input2);
                 push(&S[Input1],Input2);
             }
-            else if (Choice==2)
+            if (Choice==2)
             {
                 scanf ("%d",&Input1);
                 if (S[Input1].top == -1)
@@ -73,7 +73,7 @@ int main()
                     printf("%d\n",Temp);
                 }
             }
-            else if (Choice==3)
+            if (Choice==3)
             {
                 scanf ("%d %d",&Input1,&Input2);
                 while (S[Input2].top > -1)
