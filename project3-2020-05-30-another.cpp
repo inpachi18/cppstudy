@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-map<string,int>result; //创建一个一字符串值为主键的map
+map<string,int>result; //创建一个以字符串值为主键的map
 map<string,int>::iterator iter; //声明一个迭代器
 
 int main(){
