@@ -3,8 +3,8 @@
 
 int set[1000005];
 
-int find(int x){
-
+int find(int x)
+{
    return x==set[x]?x:(set[x]=find(set[x]));
 }
 
